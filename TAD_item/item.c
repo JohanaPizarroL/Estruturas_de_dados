@@ -35,7 +35,6 @@ int item_get_chave(ITEM *item){
   exit(1);
 }
 
-
 bool item_set_chave(ITEM *item, int chave){
   if (item != NULL){
     item->chave = chave;
