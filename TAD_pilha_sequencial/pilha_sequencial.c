@@ -39,20 +39,19 @@ int pilha_tamanho(PILHA* pilha){
 }
 
 void pilha_apagar(PILHA **pilha){
-    if(pilha != NULL){ //verificacao de existencia da pilha
+    if(pilha != NULL){
         free(*pilha);
         *pilha = NULL;
     }
 }
 
-ITEM *pilha_topo(PILHA *pilha){ //retorna o item que está no topo da pilhaa
+ITEM *pilha_topo(PILHA *pilha) { //retorna o item que está no topo da pilhaa
     ITEM* topo = (ITEM*) malloc(sizeof(ITEM*));
     topo = pilha->item[pilha->tamanho];
     return topo;
 }
 
-
-bool pilha_empilhar(PILHA *pilha, ITEM *item){ //item ja existente e vai ser empilhada na pilha(inserida no topo, como pilha é um vetor, é inserida na ultima posicao, que seria a pos atual de tamanho)
+bool pilha_empilhar(PILHA *pilha, ITEM *item) {
     if((pilha != NULL) && !(pilha_cheia(pilha))){
         pilha->item[pilha->tamanho] = item;
         pilha->tamanho++;
@@ -61,9 +60,7 @@ bool pilha_empilhar(PILHA *pilha, ITEM *item){ //item ja existente e vai ser emp
     return (false);
 }
 
-
-ITEM *pilha_desempilhar(PILHA *pilha){
-
+ITEM *pilha_desempilhar(PILHA *pilha) {
     ITEM* i;
 
     if((pilha != NULL)&& !(pilha_vazia(pilha))){
